@@ -1,0 +1,96 @@
+import React, { useState } from "react";
+import { ArrowRight, Download } from "lucide-react";
+
+const Home = () => {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <section className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 px-4 sm:px-6 md:px-20 py-8 sm:py-12 md:py-20 overflow-hidden">
+      {/* Professional Glassmorphism Circles */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div
+          className="absolute top-0 left-0 w-[500px] h-[500px] bg-white rounded-full blur-3xl opacity-20"
+          style={{ zIndex: 0 }}
+        ></div>
+        <div
+          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-400 rounded-full blur-3xl opacity-10"
+          style={{ zIndex: 0 }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-purple-400 rounded-full blur-3xl opacity-10"
+          style={{ transform: "translate(-50%, -50%)", zIndex: 0 }}
+        ></div>
+      </div>
+      {/* Left Side: Content */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-start text-left space-y-6 animate-fade-in w-full max-w-xl">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+          Hi, I'm <span className="text-primary">Wasim</span>
+        </h2>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 mb-2">
+          Frontend Developer
+        </h3>
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6">
+          I build modern, scalable web applications with a focus on clean code
+          and seamless user experiences.
+        </p>
+        {/* Skill Logos */}
+        <div className="flex flex-wrap gap-4 mb-6">
+          {[
+            "react-native-logo.png",
+            "Angularjs-logo.png",
+            "css-logo.png",
+            "github-logo.png",
+            "html-logo.jpg",
+            "javascript-logo.png",
+            "nextjs-logo.png",
+            "reactjs-logo.jpg",
+            "tailwindcss-logo.png",
+          ].map((logo, idx) => (
+            <div
+              key={idx}
+              className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 border border-gray-200"
+            >
+              <img
+                src={`src/assets/logo/${logo}`}
+                alt={logo.replace(".png", "")}
+                className="w-12 h-12 object-contain rounded-full"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex gap-4 mt-2">
+          <button
+            className={`flex items-center gap-2 px-6 py-2 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+              hover
+                ? "bg-white text-primary border border-primary"
+                : "bg-primary text-black"
+            }`}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+          >
+            More Info <ArrowRight size={20} />
+          </button>
+          <a
+            href="/src/assets/CV.pdf"
+            download
+            className="flex items-center gap-2 bg-gray-200 text-primary px-6 py-2 rounded-xl shadow-lg hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            Download CV <Download size={20} />
+          </a>
+        </div>
+      </div>
+      {/* Right Side: Image */}
+      <div className="relative z-10 flex-1 flex justify-center items-center mt-10 md:mt-0 animate-slide-in w-full max-w-lg">
+        <div className="relative max-w-xs sm:max-w-sm md:max-w-lg h-64 sm:h-80 md:h-[32rem] flex items-center justify-center bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border-4 border-gray-100 overflow-hidden">
+          <img
+            src="src/assets/images/wasimimg.png"
+            alt="Developer"
+            className="w-full h-full object-cover rounded-3xl transition-all duration-500 hover:scale-105"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Home;
