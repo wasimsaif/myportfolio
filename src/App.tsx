@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-            <div style={{ marginTop: "6rem" }}></div>
+            <div style={{ marginTop: "4rem" }}></div>
       <Home />
       <About/>
       <Project />

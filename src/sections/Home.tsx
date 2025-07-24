@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download,} from "lucide-react";
 
 const Home = () => {
   const [hover, setHover] = useState(false);
@@ -36,15 +36,15 @@ const Home = () => {
         {/* Skill Logos */}
         <div className="flex flex-wrap gap-4 mb-6">
           {[
-            "react-native-logo.png",
-            "Angularjs-logo.png",
-            "css-logo.png",
-            "github-logo.png",
             "html-logo.jpg",
+            "css-logo.png",
+            "tailwindcss-logo.png",
+            "react-native-logo.png",
             "javascript-logo.png",
+            "Angularjs-logo.png",
             "nextjs-logo.png",
             "reactjs-logo.jpg",
-            "tailwindcss-logo.png",
+            "github-logo.png",
           ].map((logo, idx) => (
             <div
               key={idx}
@@ -87,6 +87,37 @@ const Home = () => {
             alt="Developer"
             className="w-full h-full object-cover rounded-3xl transition-all duration-500 hover:scale-105"
           />
+        </div>
+        {/* Social Logos Column with Lucide Icons */}
+        <div className="flex flex-col items-center gap-2 mt-8 pl-4">
+          <a
+            href="https://www.linkedin.com/in/wasim-saifi-b6954321b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 border border-gray-200"
+          >
+            <i className="fa-brands fa-linkedin-in text-2xl text-blue-600"></i>
+          </a>
+          <a
+            href="https://wa.me/7017499280"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 border border-gray-200"
+          >
+            <i className="fa-brands fa-whatsapp text-2xl text-green-500"></i>
+          </a>
+          <a
+            href="tel:+917017499280"
+            className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 border border-gray-200"
+          >
+            <i className="fa-solid fa-phone text-2xl text-gray-700"></i>
+          </a>
+          <a
+            href="mailto:wasimsaifi983@gmail.com"
+            className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 border border-gray-200"
+          >
+            <i className="fa-solid fa-envelope text-2xl text-red-500"></i>
+          </a>
         </div>
       </div>
     </section>
