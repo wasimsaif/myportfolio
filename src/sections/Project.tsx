@@ -45,7 +45,10 @@ const projects = [
 
 const Project = () => {
   return (
-    <section className="relative w-full min-h-screen py-20 px-4 sm:px-6 md:px-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden">
+    <section
+      id="projects"
+      className="relative w-full min-h-screen py-20 px-4 sm:px-6 md:px-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden"
+    >
       {/* Background Circles */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white rounded-full blur-3xl opacity-20" />

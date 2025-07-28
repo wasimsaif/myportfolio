@@ -21,10 +21,26 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-10 text-gray-800 font-medium">
-          <li className="cursor-pointer hover:text-blue-500">Home</li>
-          <li className="cursor-pointer hover:text-blue-500">About</li>
-          <li className="cursor-pointer hover:text-blue-500">Projects</li>
-          <li className="cursor-pointer hover:text-blue-500">Contact Us</li>
+          <li>
+            <a href="#home" className="cursor-pointer hover:text-blue-500">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about" className="cursor-pointer hover:text-blue-500">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="cursor-pointer hover:text-blue-500">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="cursor-pointer hover:text-blue-500">
+              Contact Us
+            </a>
+          </li>
         </ul>
 
         {/* Hamburger Icon */}
@@ -41,10 +57,42 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden px-5 pb-4">
           <ul className="flex flex-col gap-4 text-gray-800 font-medium">
-            <li className="cursor-pointer hover:text-blue-500">Home</li>
-            <li className="cursor-pointer hover:text-blue-500">About</li>
-            <li className="cursor-pointer hover:text-blue-500">Projects</li>
-            <li className="cursor-pointer hover:text-blue-500">Contact Us</li>
+            <li>
+              <a
+                href="#home"
+                className="cursor-pointer hover:text-blue-500"
+                onClick={toggleMenu}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="cursor-pointer hover:text-blue-500"
+                onClick={toggleMenu}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="cursor-pointer hover:text-blue-500"
+                onClick={toggleMenu}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="cursor-pointer hover:text-blue-500"
+                onClick={toggleMenu}
+              >
+                Contact Us
+              </a>
+            </li>
           </ul>
         </div>
       )}

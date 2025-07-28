@@ -3,7 +3,10 @@ import { GraduationCap, Briefcase, Code2, Sparkles } from "lucide-react";
 
 const About = () => {
   return (
-    <section className="w-full bg-gray-900 text-white py-20 px-6 md:px-16">
+    <section
+      id="about"
+      className="w-full bg-gray-900 text-white py-20 px-6 md:px-16"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-4">

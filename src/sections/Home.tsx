@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Download } from "lucide-react";
+import {Download} from "lucide-react";
 
 const titles = ["Frontend Developer", "Android Developer"];
 const skills = [
@@ -15,7 +15,6 @@ const skills = [
 ];
 
 const Home = () => {
-  const [hover, setHover] = useState(false);
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [show, setShow] = useState(true);
 
@@ -34,7 +33,10 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-x-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 px-4 sm:px-6 md:px-20 py-8 sm:py-12 md:py-20 overflow-hidden">
+    <section
+      id="home"
+      className="relative w-full min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-x-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 px-4 sm:px-6 md:px-20 py-8 sm:py-12 md:py-20 overflow-hidden"
+    >
       {/* Background Circles */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white rounded-full blur-3xl opacity-20" />
@@ -82,7 +84,7 @@ const Home = () => {
 
         {/* Buttons */}
         <div className="flex gap-4 mt-2">
-          <button
+          {/* <button
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             className={`flex items-center gap-2 px-6 py-2 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 border ${
@@ -92,14 +94,20 @@ const Home = () => {
             }`}
           >
             More Info <ArrowRight size={20} />
-          </button>
+          </button> */}
 
           <a
-            href="/src/assets/CV.pdf"
+            href="Wasim_Saifi_FR.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             download
-            className="flex items-center gap-2 bg-gray-200 text-primary px-6 py-2 rounded-xl shadow-lg hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-xl shadow-xl hover:from-pink-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
           >
-            Download CV <Download size={20} />
+            <span className="animate-pulse">Download CV</span>
+            <Download
+              size={20}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </a>
         </div>
       </div>
