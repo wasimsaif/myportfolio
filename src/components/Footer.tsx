@@ -1,6 +1,6 @@
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import logo from "../assets/images/wswhitelogo.png"; // Update if needed
+import logo from "../../public/images/wswhitelogo.png"; // Update if needed
 
 const Footer = () => {
   return (
@@ -16,8 +16,8 @@ const Footer = () => {
           <div>
             <h2 className="text-xl font-bold text-white mb-1">Wasim Saifi</h2>
             <p className="text-sm text-gray-400 max-w-sm">
-              Passionate Software Developer <br/> crafting clean, modern,<br/> and
-              responsive digital experiences.
+              Passionate Software Developer <br /> crafting clean, modern,
+              <br /> and responsive digital experiences.
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ const Footer = () => {
           <li>
             <a href="#home" className="hover:text-blue-400 transition">
               Home
-            </a>  
+            </a>
           </li>
           <li>
             <a href="#about" className="hover:text-blue-400 transition">
@@ -49,7 +49,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/wasimsaif"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition"
