@@ -122,7 +122,7 @@ const ContactUs = () => {
             <div className="order-2 lg:order-1 flex flex-col justify-center space-y-8">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Contact <span className="text-blue-400">Us</span>
+                  Contact <span className="text-blue-400">Me</span>
                 </h2>
                 <p className="text-gray-300 text-lg">
                   It is very important for us to keep in touch with you...
