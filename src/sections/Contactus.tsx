@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import GlobeComponent from "../components/Globe";
 
 const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -28,7 +29,7 @@ const ContactUs = () => {
 
     if (!form.current) return;
 
-    setIsLoading(true); // Show loader
+    setIsLoading(true);
 
     emailjs
       .sendForm("service_es2s6yg", "template_svyrplc", form.current, {
@@ -50,9 +51,7 @@ const ContactUs = () => {
         });
       })
       .finally(() => {
-        setIsLoading(false); // Hide loader
-
-        // Auto hide notification after 2 seconds
+        setIsLoading(false);
         setTimeout(() => {
           setNotification(null);
         }, 2000);
@@ -79,70 +78,77 @@ const ContactUs = () => {
         </div>
       )}
 
-      <section className="min-h-screen flex items-center justify-center bg-gray-900 text-white px-6 py-12">
-        <div className="flex flex-col md:flex-row max-w-6xl w-full gap-12">
-          {/* Left Side - Form */}
-          <form
-            ref={form}
-            onSubmit={handleSubmit}
-            className="flex-1 flex flex-col gap-6 w-full"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="bg-transparent border-b border-gray-500 py-2 px-1 focus:outline-none focus:border-blue-500"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="bg-transparent border-b border-gray-500 py-2 px-1 focus:outline-none focus:border-blue-500"
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              maxLength={10}
-              value={formData.phone}
-              onChange={handleChange}
-              className="bg-transparent border-b border-gray-500 py-2 px-1 focus:outline-none focus:border-blue-500"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Share your thoughts"
-              value={formData.message}
-              onChange={handleChange}
-              className="bg-transparent border-b border-gray-500 py-2 px-1 focus:outline-none focus:border-blue-500 resize-none"
-              rows={4}
-              required
-            />
-            <button
-              type="submit"
-              className="mt-4 px-6 py-2 border text-sm font-semibold border-white relative z-10 overflow-hidden hover:text-white transition duration-300"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-blue-500 blur-md opacity-70 animate-pulse z-0" />
-              <span className="relative z-10">SHARE YOUR FEEDBACK</span>
-            </button>
-          </form>
+      <section className="min-h-screen bg-gray-900 text-white">
+        <div className="container mx-auto px-4 py-8 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
+            {/* Left Side - Form */}
+            <div className="order-2 lg:order-1 flex flex-col justify-center space-y-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Contact <span className="text-blue-400">Us</span>
+                </h2>
+                <p className="text-gray-300 text-lg">
+                  It is very important for us to keep in touch with you...
+                </p>
+              </div>
 
-          {/* Right Side - Text */}
-          <div className="flex-1 flex flex-col justify-center">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-white">Contact</span>{" "}
-              <span className="text-blue-400">Us</span>
-            </h2>
-            <p className="text-gray-400 leading-relaxed">
-              It is very important for us to keep in touch with you, so we are
-              always ready to answer any question that interests you. Shoot!
-            </p>
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-6">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+                    required
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    maxLength={10}
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Share your thoughts"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 resize-none transition-colors duration-300"
+                    rows={4}
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="relative mt-8 px-8 py-3 border border-white text-sm font-semibold overflow-hidden hover:text-white transition duration-300 rounded group"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-blue-500 blur-md opacity-70 animate-pulse group-hover:opacity-90 transition-opacity duration-300" />
+                  <span className="relative z-10">SHARE YOUR FEEDBACK</span>
+                </button>
+              </form>
+            </div>
+
+            {/* Right Side - Globe */}
+            <div className="order-1 lg:order-2 flex justify-center items-center">
+              <div className="w-full max-w-lg aspect-square">
+                <GlobeComponent />
+              </div>
+            </div>
           </div>
         </div>
       </section>
