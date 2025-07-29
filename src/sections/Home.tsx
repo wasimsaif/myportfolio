@@ -118,9 +118,9 @@ const Home = () => {
         {/* Image */}
         <div className="relative max-w-xs sm:max-w-sm md:max-w-md h-64 sm:h-80 md:h-[32rem] flex items-center justify-center bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border-4 border-gray-100 overflow-hidden">
           <img
-            src="../images/wasimim.jpeg"
+            src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1753783765/wasimim_mcrai8.jpg"
             alt="Developer"
-            loading="lazy"  
+            loading="lazy"
             className="w-full h-full object-cover rounded-3xl transition-all duration-500 hover:scale-105"
           />
         </div>

@@ -11,7 +11,7 @@ const Footer = () => {
           <img
             src={logo}
             alt="Wasim Logo"
-            className="w-14 h-14 object-contain rounded-full"
+            className="w-20 h-20 object-contain rounded-full"
           />
           <div>
             <h2 className="text-xl font-bold text-white mb-1">Wasim Saifi</h2>
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex  flex-wrap gap-6 justify-center text-sm font-medium text-gray-300 pr-36">
+        <ul className="flex  flex-wrap gap-6 justify-center text-sm font-medium text-gray-300 lg:pr-30">
           <li>
             <a href="#home" className="hover:text-blue-400 transition">
               Home
