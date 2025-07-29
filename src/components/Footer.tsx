@@ -1,6 +1,6 @@
 
 import { Github, Linkedin, Mail } from "lucide-react";
-import logo from "../../public/images/wswhitelogo.png"; // Update if needed
+import logo from "/images/wswhitelogo.png"; // Update if needed
 
 const Footer = () => {
   return (
