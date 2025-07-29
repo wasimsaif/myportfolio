@@ -74,6 +74,7 @@ const Home = () => {
               className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 border border-gray-200"
             >
               <img
+                loading="lazy"
                 src={`../../logo/${logo}`}
                 alt={logo.replace(".png", "")}
                 className="w-12 h-12 object-contain rounded-full"
