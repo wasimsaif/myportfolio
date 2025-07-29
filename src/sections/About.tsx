@@ -1,4 +1,3 @@
-import React from "react";
 import { GraduationCap, Briefcase, Code2, Sparkles } from "lucide-react";
 
 const About = () => {
