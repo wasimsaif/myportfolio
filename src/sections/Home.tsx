@@ -117,7 +117,7 @@ const Home = () => {
         {/* Image */}
         <div className="relative max-w-xs sm:max-w-sm md:max-w-md h-64 sm:h-80 md:h-[32rem] flex items-center justify-center bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border-4 border-gray-100 overflow-hidden">
           <img
-            src="src/assets/images/wasimimg.png"
+            src="../images/wasimimg.png"
             alt="Developer"
             className="w-full h-full object-cover rounded-3xl transition-all duration-500 hover:scale-105"
           />
