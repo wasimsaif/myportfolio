@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import GlobeComponent from "../components/Globe";
@@ -12,6 +13,12 @@ const ContactUs = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<null | {
     type: "success" | "error";
@@ -22,12 +29,45 @@ const ContactUs = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // Clear error on change
+  };
+
+  const validate = () => {
+    const newErrors = { name: "", email: "", phone: "" };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+      isValid = false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+      isValid = false;
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Enter a valid email.";
+      isValid = false;
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required.";
+      isValid = false;
+    } else if (formData.phone.length < 10) {
+      newErrors.phone = "Phone number must be 10 digits.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!form.current) return;
+
+    if (!validate()) return;
 
     setIsLoading(true);
 
@@ -42,7 +82,6 @@ const ContactUs = () => {
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
       })
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .catch((error: any) => {
         console.error("Error sending message", error);
         setNotification({
@@ -60,14 +99,12 @@ const ContactUs = () => {
 
   return (
     <div id="contact" className="relative">
-      {/* Overlay Loader */}
       {isLoading && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center">
           <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
 
-      {/* Popup Notification */}
       {notification && (
         <div
           className={`fixed top-6 right-6 z-50 px-4 py-3 rounded shadow-lg text-white transition-all duration-300 ${
@@ -94,43 +131,63 @@ const ContactUs = () => {
 
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-6">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
-                    required
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
-                    required
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    maxLength={10}
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
-                    required
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Share your thoughts"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 resize-none transition-colors duration-300"
-                    rows={4}
-                    required
-                  />
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+                    />
+                    {errors.name && (
+                      <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+                    />
+                    {errors.email && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      maxLength={10}
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+                    />
+                    {errors.phone && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <textarea
+                      name="message"
+                      placeholder="Share your thoughts"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-gray-500 py-3 px-1 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 resize-none transition-colors duration-300"
+                      rows={4}
+                    />
+                  </div>
                 </div>
 
                 <button
@@ -138,7 +195,7 @@ const ContactUs = () => {
                   className="relative mt-8 px-8 py-3 border border-white text-sm font-semibold overflow-hidden hover:text-white transition duration-300 rounded group"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-blue-500 blur-md opacity-70 animate-pulse group-hover:opacity-90 transition-opacity duration-300" />
-                  <span className="relative z-10">SHARE YOUR FEEDBACK</span>
+                  <span className="relative z-10">Click To Contact</span>
                 </button>
               </form>
             </div>

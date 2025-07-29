@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink } from "lucide-react";
+// import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -95,7 +95,7 @@ const Project = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:underline text-sm font-medium"
                 >
-                  Visit Site <ExternalLink size={16} className="ml-1" />
+                  {/* Visit Site <ExternalLink size={16} className="ml-1" /> */}
                 </a>
               </div>
             </div>
