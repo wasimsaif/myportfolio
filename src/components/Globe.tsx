@@ -21,7 +21,8 @@ interface GlobeComponentProps {
 const GlobeComponent: React.FC<GlobeComponentProps> = ({
   width = "100%",
   height = "100%",
- globeImageUrl = "//unpkg.com/three-globe/example/img/earth-dark.jpg",
+  //  globeImageUrl = "//unpkg.com/three-globe/example/img/earth-dark.jpg",
+  globeImageUrl = "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg",
   backgroundColor = "rgba(0,0,0,0)",
   showAtmosphere = true,
   atmosphereColor = "#3a228a",
