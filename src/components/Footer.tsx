@@ -57,7 +57,7 @@ const Footer = () => {
             <Github size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/wasim-saifi-b6954321b/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition"
@@ -65,7 +65,7 @@ const Footer = () => {
             <Linkedin size={22} />
           </a>
           <a
-            href="mailto:your@email.com"
+            href="mailto:wasimsaifi983@gmail.com"
             className="hover:text-blue-400 transition"
           >
             <Mail size={22} />
