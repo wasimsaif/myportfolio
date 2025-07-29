@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
         {/* Logo as Image */}
         <div className="flex items-center" style={{ height: "4rem" }}>
           <img
-            src="src/assets/images/wslogo.png"
+            src="/images/wslogo.png"
             alt="Logo"
             className="w-40 h-40 object-contain rounded-full"
             style={{ marginTop: "-1rem", marginBottom: "-1rem" }}

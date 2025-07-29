@@ -194,8 +194,10 @@ const ContactUs = () => {
                   type="submit"
                   className="relative mt-8 px-8 py-3 border border-white text-sm font-semibold overflow-hidden hover:text-white transition duration-300 rounded group"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-blue-500 blur-md opacity-70 animate-pulse group-hover:opacity-90 transition-opacity duration-300" />
-                  <span className="relative z-10">Click To Contact</span>
+                  <span className="absolute cursor-pointer inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-blue-500 blur-md opacity-70 animate-pulse group-hover:opacity-90 transition-opacity duration-300" />
+                  <span className="relative z-10 cursor-pointer">
+                    Click To Contact
+                  </span>
                 </button>
               </form>
             </div>
