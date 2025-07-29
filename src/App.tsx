@@ -4,20 +4,21 @@ import Project from './sections/Project'
 import Contactus from './sections/Contactus'
 import About from './sections/About'
 import Footer from './components/Footer'
+import { Analytics } from '@vercel/analytics/react'
 
 const App = () => {
   return (
     <>
       <Navbar />
-            <div style={{ marginTop: "4rem" }}></div>
+      <div style={{ marginTop: "4rem" }}></div>
       <Home />
-      <About/>
+      <About />
       <Project />
       <Contactus />
-      <Footer/>
-      
+      <Footer />
+      <Analytics />
     </>
-  )
+  );
 }
 
 export default App
