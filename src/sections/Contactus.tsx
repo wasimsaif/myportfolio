@@ -18,29 +18,24 @@ const ContactUs = () => {
     email: "",
     phone: "",
   });
-
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<null | {
     type: "success" | "error";
     message: string;
   }>(null);
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" }); // Clear error on change
   };
-
   const validate = () => {
     const newErrors = { name: "", email: "", phone: "" };
     let isValid = true;
-
     if (!formData.name.trim()) {
       newErrors.name = "Name is required.";
       isValid = false;
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
@@ -49,7 +44,6 @@ const ContactUs = () => {
       newErrors.email = "Enter a valid email.";
       isValid = false;
     }
-
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required.";
       isValid = false;
@@ -96,7 +90,6 @@ const ContactUs = () => {
         }, 2000);
       });
   };
-
   return (
     <div id="contact" className="relative">
       {isLoading && (
@@ -114,7 +107,6 @@ const ContactUs = () => {
           {notification.message}
         </div>
       )}
-
       <section className="min-h-screen bg-gray-900 text-white">
         <div className="container mx-auto px-4 py-8 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
@@ -122,13 +114,12 @@ const ContactUs = () => {
             <div className="order-2 lg:order-1 flex flex-col justify-center space-y-8">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Contact <span className="text-blue-400">Me</span>
+                Contact <span className="text-blue-400">Me</span>
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  It is very important for us to keep in touch with you...
+                It is very important for us to keep in touch with you...
                 </p>
               </div>
-
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-6">
                   <div>
@@ -144,7 +135,6 @@ const ContactUs = () => {
                       <p className="text-red-400 text-sm mt-1">{errors.name}</p>
                     )}
                   </div>
-
                   <div>
                     <input
                       type="email"
@@ -160,7 +150,8 @@ const ContactUs = () => {
                       </p>
                     )}
                   </div>
-
+                  <div>
+                  </div>
                   <div>
                     <input
                       type="tel"
@@ -189,7 +180,6 @@ const ContactUs = () => {
                     />
                   </div>
                 </div>
-
                 <button
                   type="submit"
                   className="relative mt-8 px-8 py-3 border border-white text-sm font-semibold overflow-hidden hover:text-white transition duration-300 rounded group"
@@ -201,7 +191,6 @@ const ContactUs = () => {
                 </button>
               </form>
             </div>
-
             {/* Right Side - Globe */}
             <div className="order-1 lg:order-2 flex justify-center items-center">
               <div className="w-full max-w-lg aspect-square">
@@ -214,5 +203,4 @@ const ContactUs = () => {
     </div>
   );
 };
-
 export default ContactUs;

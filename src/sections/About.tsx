@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, Code2, Sparkles } from "lucide-react";
+import { GraduationCap, Briefcase, Code2 } from "lucide-react";
 
 const About = () => {
   return (
@@ -18,9 +18,9 @@ const About = () => {
         </p>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Education Card */}
-          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 transition">
+          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-300">
             <div className="flex items-center gap-4 mb-4">
               <GraduationCap className="text-blue-400 w-8 h-8" />
               <h3 className="text-xl font-semibold">Education</h3>
@@ -38,7 +38,7 @@ const About = () => {
           </div>
 
           {/* Experience Card */}
-          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 transition">
+          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-300">
             <div className="flex items-center gap-4 mb-4">
               <Briefcase className="text-blue-400 w-8 h-8" />
               <h3 className="text-xl font-semibold">Experience</h3>
@@ -58,7 +58,7 @@ const About = () => {
           </div>
 
           {/* Skills Card */}
-          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 transition">
+          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 hover:scale-105 transition-transform duration-300">
             <div className="flex items-center gap-4 mb-4">
               <Code2 className="text-blue-400 w-8 h-8" />
               <h3 className="text-xl font-semibold">Skills</h3>
@@ -67,19 +67,6 @@ const About = () => {
               HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Angular, React,
               React Native, Next.js, Git, GitHub, DevOps (basics)
             </p>
-          </div>
-
-          {/* Highlights Card */}
-          <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-blue-500/40 transition">
-            <div className="flex items-center gap-4 mb-4">
-              <Sparkles className="text-blue-400 w-8 h-8" />
-              <h3 className="text-xl font-semibold">Highlights</h3>
-            </div>
-            <ul className="text-gray-400 space-y-2 list-disc list-inside">
-              <li>Full Stack Java Developer Training – Jspiders Noida</li>
-              <li>Handled both mobile & web for key projects</li>
-              <li>Excellent multitasking and communication skills</li>
-            </ul>
           </div>
         </div>
       </div>

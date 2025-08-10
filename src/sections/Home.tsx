@@ -3,14 +3,14 @@ import {Download} from "lucide-react";
 
 const titles = ["Frontend Developer", "Android Developer"];
 const skills = [
-  "html-logo.jpg",
-  "css-logo.png",
-  "tailwindcss-logo.png",
-  "javascript-logo.png",
   "react-native-logo.png",
   "Angularjs-logo.png",
   "nextjs-logo.png",
+  "html-logo.jpg",
   "reactjs-logo.jpg",
+  "css-logo.png",
+  "tailwindcss-logo.png",
+  "javascript-logo.png",
   "github-logo.png",
 ];
 
@@ -118,7 +118,8 @@ const Home = () => {
         {/* Image */}
         <div className="relative max-w-xs sm:max-w-sm md:max-w-md h-64 sm:h-80 md:h-[32rem] flex items-center justify-center bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border-4 border-gray-100 overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1753783765/wasimim_mcrai8.jpg"
+            // src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1753783765/wasimim_mcrai8.jpg"
+            src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1754806295/Wasim_crop_g6pfga.jpg"
             alt="Developer"
             loading="lazy"
             className="w-full h-full object-cover rounded-3xl transition-all duration-500 hover:scale-105"
