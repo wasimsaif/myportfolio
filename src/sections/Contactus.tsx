@@ -114,10 +114,10 @@ const ContactUs = () => {
             <div className="order-2 lg:order-1 flex flex-col justify-center space-y-8">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Contact <span className="text-blue-400">Me</span>
+                  Contact <span className="text-blue-400">Me</span>
                 </h2>
                 <p className="text-gray-300 text-lg">
-                It is very important for us to keep in touch with you...
+                  It is very important for us to keep in touch with you...
                 </p>
               </div>
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
@@ -150,8 +150,7 @@ const ContactUs = () => {
                       </p>
                     )}
                   </div>
-                  <div>
-                  </div>
+                  <div></div>
                   <div>
                     <input
                       type="tel"
@@ -182,12 +181,9 @@ const ContactUs = () => {
                 </div>
                 <button
                   type="submit"
-                  className="relative mt-8 px-8 py-3 border border-white text-sm font-semibold overflow-hidden hover:text-white transition duration-300 rounded group"
+                  className="flex items-center cursor-pointer gap-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-xl shadow-xl hover:from-pink-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
                 >
-                  <span className="absolute cursor-pointer inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-blue-500 blur-md opacity-70 animate-pulse group-hover:opacity-90 transition-opacity duration-300" />
-                  <span className="relative z-10 cursor-pointer">
-                    Click To Contact
-                  </span>
+                  <span className="animate-pulse">Contact Me</span>
                 </button>
               </form>
             </div>
