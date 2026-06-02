@@ -13,7 +13,6 @@ const skills = [
   "javascript-logo.png",
   "github-logo.png",
 ];
-
 const Home = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [show, setShow] = useState(true);
@@ -46,13 +45,11 @@ const Home = () => {
           style={{ transform: "translate(-50%, -50%)" }}
         />
       </div>
-
-      {/* Left Content */}
+      {/*Left Content*/}
       <div className="relative z-10 flex-1 flex flex-col justify-center items-start text-left space-y-6 animate-fade-in w-full max-w-xl">
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
           Hi, I'm <span className="text-primary">Wasim</span>
         </h2>
-
         <h3
           className={`text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 transition-opacity duration-500 ease-in-out ${
             show ? "opacity-100" : "opacity-0"
@@ -60,12 +57,10 @@ const Home = () => {
         >
           {titles[currentTitleIndex]}
         </h3>
-
         <p className="text-base sm:text-lg md:text-xl text-gray-600">
           I build modern, scalable web applications with a focus on clean code
           and seamless user experiences.
         </p>
-
         {/* Skill Logos */}
         <div className="flex flex-wrap gap-4">
           {skills.map((logo, idx) => (
@@ -82,7 +77,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-
         {/* Buttons */}
         <div className="flex gap-4 mt-2">
           {/* <button
@@ -96,7 +90,6 @@ const Home = () => {
           >
             More Info <ArrowRight size={20} />
           </button> */}
-
           <a
             href="Wasim_Saifi_FR.pdf"
             target="_blank"
@@ -112,20 +105,18 @@ const Home = () => {
           </a>
         </div>
       </div>
-
       {/* Right Side */}
       <div className="relative z-10 flex-1 flex md:flex-row sm:flex-row-reverse flex-col items-center justify-center gap-6 mt-10 md:mt-0 animate-slide-in w-full max-w-3xl">
         {/* Image */}
         <div className="relative max-w-xs sm:max-w-sm md:max-w-md h-64 sm:h-80 md:h-[32rem] flex items-center justify-center bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border-4 border-gray-100 overflow-hidden">
           <img
             // src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1753783765/wasimim_mcrai8.jpg"
-            src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1754806295/Wasim_crop_g6pfga.jpg"
+            src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1780392012/DSC_5454_2-removebg-previewcs_ouot2h.png"
             alt="Developer"
             loading="lazy"
             className="w-full h-full object-cover rounded-3xl transition-all duration-500 hover:scale-105"
           />
         </div>
-
         {/* Social Icons (beside image on large screen) */}
         <div className="flex flex-row md:flex-col items-center gap-4">
           <a

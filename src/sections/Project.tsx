@@ -1,6 +1,4 @@
-
 import { ExternalLink } from "lucide-react";
-
 const projects = [
   {
     name: "DNCR Property (Real Estate)",
@@ -42,7 +40,6 @@ const projects = [
     description: "A mobile app for buying and selling real estate. Partners can list, manage properties, and connect with buyers seamlessly.",
   }
 ];
-
 const Project = () => {
   return (
     <section
@@ -105,5 +102,6 @@ const Project = () => {
     </section>
   );
 };
-
 export default Project;
+
+

@@ -21,7 +21,6 @@ const Footer = () => {
             </p>
           </div>
         </div>
-
         {/* Navigation Links */}
         <ul className="flex  flex-wrap gap-6 justify-center text-sm font-medium text-gray-300 lg:pr-30">
           <li>
@@ -72,12 +71,12 @@ const Footer = () => {
           </a>
         </div>
       </div>
-
       {/* Divider + Copyright */}
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Wasim Saifi. All rights reserved.
       </div>
     </footer>
+    
   );
 };
 

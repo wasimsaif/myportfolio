@@ -55,16 +55,12 @@ const ContactUs = () => {
     setErrors(newErrors);
     return isValid;
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!form.current) return;
-
     if (!validate()) return;
-
     setIsLoading(true);
-
     emailjs
       .sendForm("service_es2s6yg", "template_svyrplc", form.current, {
         publicKey: "wLijIDhmga-cVq0md",
@@ -119,6 +115,8 @@ const ContactUs = () => {
                 <p className="text-gray-300 text-lg">
                   It is very important for us to keep in touch with you...
                 </p>
+                {/* thsi is tha main and thr object  and ther amin of the amiun  caterogyut nf the maine of f ther 
+                it is usedto represednt and the intergeer and flaort value fbotht in dat adta athi is not poitmitive dtatyoe and rr itive dat atyep  */}
               </div>
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-6">
