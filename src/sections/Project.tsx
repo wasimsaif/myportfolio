@@ -1,99 +1,129 @@
 import { ExternalLink } from "lucide-react";
+
 const projects = [
+  {
+    name: "Sangam Glass house",
+    url: "https://www.sangamglasshouse.in/",
+    description:
+      "A modern glass and interior brand website built for customer trust, product discovery, and lead generation. The platform highlights premium offerings and supports business inquiries with a clean conversion-focused experience.",
+    tech: ["Next.js", "MongoDB", "Cloudinary", "Resend", "Nest.js", "REST API"],
+    accent: "from-violet-500/20 via-indigo-500/10 to-transparent",
+  },
   {
     name: "DNCR Property (Real Estate)",
     url: "https://dncrproperty.com/",
-    tech: "HTML,CSS,Javascript, Tailwind CSS, Angular.",
     description:
-      "A modern real estate platform offering property listings, search filters, and mobile support.",
+      "A modern real estate platform offering property listings, search filters, and mobile support for a smoother property discovery journey.",
+    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "Angular"],
+    accent: "from-sky-500/20 via-cyan-500/10 to-transparent",
   },
   {
     name: "Petrasync (Automotive)",
-    url: "https://petrasyncwebapp.azurewebsites.net/",
-    tech: "Angular,Bootstrap,CSS.",
+    url: "https://petraautoproducts.com/petrasync/",
     description:
-      "Luxury automobile parts inventory and dealer management solution.",
+      "Luxury automobile parts inventory and dealer management solution designed for product browsing and streamlined operations.",
+    tech: ["Angular", "Bootstrap", "CSS", ".NET"],
+    accent: "from-amber-500/20 via-orange-500/10 to-transparent",
   },
   {
     name: "MH Realty",
     url: "https://mhrealty.in/",
-    tech: "HTML, Tailwind CSS,Javscript",
-    description: "Real estate site with featured properties and elegant UI.",
+    description:
+      "A premium real estate landing experience with elegant sections, featured property highlights, and a refined mobile-first layout.",
+    tech: ["HTML", "Tailwind CSS", "JavaScript"],
+    accent: "from-emerald-500/20 via-teal-500/10 to-transparent",
   },
   {
     name: "Deccan Realty",
     url: "https://deccanrealty.com/",
-    tech: "HTML, Tailwind CSS, JavaScript",
     description:
-      "Responsive platform for showcasing premium real estate listings.",
+      "Responsive property showcase website built to highlight premium listings and improve the overall buyer experience.",
+    tech: ["HTML", "Tailwind CSS", "JavaScript"],
+    accent: "from-pink-500/20 via-fuchsia-500/10 to-transparent",
   },
   {
     name: "Munatech",
     url: "https://munatech.com/",
-    tech: "Next.js, Tailwind CSS, TypeScript",
-    description: "Corporate site for a technology services company.",
+    description:
+      "Corporate website created to represent a technology services brand with a professional and credible digital presence.",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
+    accent: "from-indigo-500/20 via-blue-500/10 to-transparent",
   },
   {
     name: "MTOne Mobile App",
-    url: "https://mtestates.com/partners/download/application.html",
-    tech: "React Native,",
-    description: "A mobile app for buying and selling real estate. Partners can list, manage properties, and connect with buyers seamlessly.",
-  }
+    url: "https://play.google.com/store/apps/details?id=com.mtonema",
+    description:
+      "A real-estate mobile app focused on property transactions, listing management, and seamless buyer-seller communication.",
+    tech: ["React Native"],
+    accent: "from-rose-500/20 via-red-500/10 to-transparent",
+  },
 ];
+
 const Project = () => {
   return (
     <section
       id="projects"
-      className="relative w-full min-h-screen py-20 px-4 sm:px-6 md:px-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 overflow-hidden"
+      className="relative w-full overflow-hidden bg-[#050816] px-4 py-20 text-white sm:px-6 md:px-10 lg:px-16"
     >
-      {/* Background Circles */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white rounded-full blur-3xl opacity-20" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-400 rounded-full blur-3xl opacity-10" />
-        <div
-          className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-purple-400 rounded-full blur-3xl opacity-10"
-          style={{ transform: "translate(-50%, -50%)" }}
-        />
-      </div>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.14),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.10),_transparent_30%)]" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-6">
-          Projects
-        </h2>
-        <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">
-          A glimpse of real-world projects I've built and contributed to in my
-          career.
-        </p>
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-300">
+            Selected work
+          </p>
+          <h2 className="text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl">
+            Projects
+          </h2>
+          <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg">
+            I build practical digital products that focus on performance,
+            usability, and business impact across web and mobile experiences.
+          </p>
+        </div>
 
-        {/* Project Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white/60 backdrop-blur-md border border-gray-200 hover:border-blue-500 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 ease-in-out rounded-2xl p-6 relative overflow-hidden"
+              className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-indigo-400/40 hover:shadow-[0_30px_100px_rgba(99,102,241,0.2)]"
             >
-              {/* Decorative gradient ring */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 opacity-0 group-hover:opacity-100 transition duration-500 z-0" />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-100`}
+              />
 
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                <div className="mb-5 flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-indigo-200">
+                    {index === 0 ? "Project" : "Project"}
+                  </span>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-2.5 py-1.5 text-xs font-medium text-slate-100 transition-colors duration-300 hover:border-white/20 hover:bg-slate-800"
+                  >
+                    Visit
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+
+                <h3 className="mb-3 text-2xl font-bold text-white">
                   {project.name}
                 </h3>
-                <p className="text-sm text-gray-600 mb-3">
+                <p className="mb-5 text-sm leading-7 text-slate-300">
                   {project.description}
                 </p>
-                <p className="text-xs text-gray-500 mb-4">
-                  <strong>Tech Stack:</strong> {project.tech}
-                </p>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:underline text-sm font-medium"
-                >
-                  Visit Site <ExternalLink size={16} className="ml-1" />
-                </a>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-slate-900/70 px-2.5 py-1.5 text-[11px] font-medium text-slate-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -102,6 +132,7 @@ const Project = () => {
     </section>
   );
 };
+
 export default Project;
 
 

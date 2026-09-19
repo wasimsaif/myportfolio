@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f3f5f9;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
 }
