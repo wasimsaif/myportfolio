@@ -63,19 +63,17 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="relative w-full overflow-hidden bg-[#050816] px-4 py-20 text-white sm:px-6 md:px-10 lg:px-16"
+      className="relative w-full overflow-hidden bg-[#f3f5f9] px-4 py-16 text-slate-900 sm:px-6 md:px-10 lg:px-16"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.14),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.10),_transparent_30%)]" />
 
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-300">
-            Selected work
-          </p>
-          <h2 className="text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl">
+          
+          <h2 className="text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl">
             Projects
           </h2>
-          <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
             I build practical digital products that focus on performance,
             usability, and business impact across web and mobile experiences.
           </p>
@@ -85,22 +83,22 @@ const Project = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_80px_rgba(15,23,42,0.35)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-indigo-400/40 hover:shadow-[0_30px_100px_rgba(99,102,241,0.2)]"
+              className="group relative overflow-hidden rounded-[28px] border border-slate-700/80 bg-gradient-to-br from-slate-900 via-slate-950 to-[#111827] p-5 shadow-[0_20px_60px_rgba(15,23,42,0.24)] transition-all duration-300 hover:-translate-y-2 hover:border-indigo-400/60 hover:shadow-[0_28px_80px_rgba(15,23,42,0.32)]"
             >
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-100`}
+                className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-40`}
               />
 
               <div className="relative z-10">
                 <div className="mb-5 flex items-center justify-between gap-3">
-                  <span className="rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-indigo-200">
-                    {index === 0 ? "Project" : "Project"}
+                  <span className="rounded-full border border-indigo-400/30 bg-indigo-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-indigo-200">
+                    Project
                   </span>
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/70 px-2.5 py-1.5 text-xs font-medium text-slate-100 transition-colors duration-300 hover:border-white/20 hover:bg-slate-800"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-2.5 py-1.5 text-xs font-semibold text-slate-200 transition-colors duration-300 hover:border-indigo-400/50 hover:bg-indigo-500/20 hover:text-white"
                   >
                     Visit
                     <ExternalLink className="h-3.5 w-3.5" />
@@ -118,7 +116,7 @@ const Project = () => {
                   {project.tech.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/10 bg-slate-900/70 px-2.5 py-1.5 text-[11px] font-medium text-slate-200"
+                      className="rounded-full border border-slate-700 bg-slate-800/80 px-2.5 py-1.5 text-[11px] font-semibold text-slate-300"
                     >
                       {item}
                     </span>

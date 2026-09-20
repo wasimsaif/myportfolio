@@ -100,14 +100,13 @@ const Home = () => {
               {skills.map((logo) => (
                 <div
                   key={logo}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
-                  title={logo.replace(/[-.]/g, " ")}
+                  className="flex h-13 w-13 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
                 >
                   <img
                     loading="lazy"
                     src={`../../logo/${logo}`}
                     alt={logo.replace(/\.(png|jpg)/gi, "")}
-                    className="h-7 w-7 rounded-full object-contain"
+                    className="h-12 w-12  rounded-full object-contain"
                   />
                 </div>
               ))}
@@ -117,38 +116,36 @@ const Home = () => {
 
         <div className="relative flex items-center justify-center lg:justify-end">
           <div className="relative w-full max-w-[430px]">
-            <div className="absolute left-8 top-10 h-28 w-28 rounded-full bg-indigo-200/80 blur-2xl" />
-            <div className="absolute bottom-6 right-6 h-28 w-28 rounded-full bg-cyan-200/70 blur-2xl" />
+            <div className="absolute -right-5 top-12 h-32 w-32 rounded-full bg-indigo-200/70 blur-3xl" />
+            <div className="absolute -bottom-4 left-4 h-28 w-28 rounded-full bg-cyan-200/70 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-[30px] border border-slate-200 bg-white p-4 shadow-[0_30px_90px_rgba(15,23,42,0.08)]">
-              <div className="mb-4 flex items-center justify-between px-2">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/80 bg-white/95 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.14)] backdrop-blur-sm">
+              <div className="mb-5 flex items-center justify-between px-1">
                 <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-red-400" />
-                  <span className="h-3 w-3 rounded-full bg-amber-400" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
+                  <span className="h-3 w-3 rounded-full bg-[#ff605c]" />
+                  <span className="h-3 w-3 rounded-full bg-[#ffbd44]" />
+                  <span className="h-3 w-3 rounded-full bg-[#00ca4e]" />
                 </div>
-               
+                <span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                  Portfolio
+                </span>
               </div>
 
-              <div className="rounded-[24px] border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-3">
-                <div className="overflow-hidden rounded-[18px] bg-slate-100">
+              <div className="rounded-[26px] border border-slate-200 bg-gradient-to-br from-slate-100 via-white to-slate-50 p-3">
+                <div className="relative h-[300px] overflow-hidden rounded-[20px] bg-[#373740] shadow-inner shadow-black/10 sm:h-[340px]">
                   <img
                     src="https://res.cloudinary.com/dcb1otmpr/image/upload/v1780392012/DSC_5454_2-removebg-previewcs_ouot2h.png"
                     alt="Wasim Saifi"
                     loading="lazy"
-                    className="mx-auto h-[390px] w-full max-w-[300px] object-cover object-center"
+                    className="absolute inset-0 h-full w-full object-contain object-top"
                   />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
               </div>
 
-             
             </div>
 
-           
-
-           
-
-            <div className="absolute -bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-lg shadow-slate-200/80">
+            <div className="absolute -bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full border border-white bg-white px-4 py-2 shadow-[0_14px_35px_rgba(15,23,42,0.16)]">
               {socials.map(({ href, label, icon: Icon }) => (
                 <a
                   key={label}
